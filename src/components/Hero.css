@@ -7,7 +7,7 @@
 }
 .Hero__title{
 font-size:3rem;
-margin-left: 100px;
+margin-left: 10%;
 font-weight: bold;
 text-transform: uppercase;
 }
@@ -19,10 +19,20 @@ text-transform: uppercase;
     width:70%;
 }
 @media (max-width:768px){
-    .Hero__image{
-        display: none;
-    }
+   .Hero{
+       flex-direction: column;
+       justify-content: center;
+   }
+   .Hero__image svg{
+       height: 100%;
+   }
     .Hero__title{
-        font-size:1.5rem;
+        font-size:1.2rem;
+        text-align: center;
+        margin-left:0;
+        flex: 0.5;
+    }
+    .Hero__title p:first-child{
+        font-size:1.8rem;
     }
 }
