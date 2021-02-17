@@ -1,0 +1,18 @@
+.BarChart{
+    width:100%;
+    background:#fff;
+    border-radius: 10px;
+    -webkit-box-shadow: 10px 10px 47px -7px rgba(0,0,0,0.45);
+    -moz-box-shadow: 10px 10px 47px -7px rgba(0,0,0,0.45);
+    box-shadow: 10px 10px 47px -7px rgba(0,0,0,0.45);
+}
+.BarChart__Title{
+    text-align: center;
+    font-size:25px;
+    font-weight: bold;
+    padding: 10px;
+}
+.BarChart__Data{
+    font-size: 20px;
+    padding:20px;
+}

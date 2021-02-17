@@ -1,0 +1,22 @@
+.Nav{
+    width:100%;
+    height: 8vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+   
+}
+.Nav__Logo{
+    font-weight: bold;
+    color:var(--green-color);
+}
+.Nav__menu ol{
+    display:flex;
+    justify-content: space-around;
+    list-style: none;
+    cursor:pointer;
+}
+.Nav__menu{
+    width:30%;
+    text-decoration: none;
+}

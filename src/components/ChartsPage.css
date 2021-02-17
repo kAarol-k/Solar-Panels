@@ -1,0 +1,15 @@
+.Charts__Page{
+    width:100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+}
+.Charts__Block{
+    width:80%;
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(auto-fit, minmax(520px, 1fr));
+    gap: 50px;
+
+}
