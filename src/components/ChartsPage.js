@@ -1,24 +1,28 @@
-import React from 'react'
+import React, {useState, useEffect}from 'react'
 import './ChartsPage.css'
 import BarChart from './BarChart.js'
-function ChartsPage() {
-    const objects =[
-        {title:'Pasym',name:'asd',data:[14,15,13,52,34,22], allTime:124, daily:24},
-        {title:'Szczytno',name:'asd',data:[14,15,13,52,34,22], allTime:124, daily:24},
-        {title:'Purda',name:'asd',data:[14,15,13,52,34,22], allTime:124, daily:24},
-        {title:'Pasym',name:'asd',data:[14,15,13,52,34,22], allTime:124, daily:24},
-        {title:'Pasym',name:'asd',data:[14,15,13,52,34,22], allTime:124, daily:24},
-        {title:'Pasym',name:'asd',data:[14,15,13,52,34,22], allTime:124, daily:24},
-        {title:'Pasym',name:'asd',data:[14,15,13,52,34,22], allTime:124, daily:24},
-        {title:'Pasym',name:'asd',data:[14,15,13,52,34,22], allTime:124, daily:24},
-        {title:'Pasym',name:'asd',data:[14,15,13,52,34,22], allTime:124, daily:24},
-        {title:'Pasym',name:'asd',data:[14,15,13,52,34,22], allTime:124, daily:24},
-        {title:'Pasym',name:'asd',data:[14,15,13,52,34,22], allTime:124, daily:24},
+import db from '../Firebase.js'
 
-];
-    
-    
-    
+function NewData(){
+
+    const [panels, setPanels] = useState([]);
+    useEffect(()=>{
+        db.collection('panels')
+            .onSnapshot((snapshot) =>{
+                const newPanels = snapshot.docs.map((doc)=>({
+                    id: doc.id,
+                    ...doc.data()
+                }))
+                setPanels(newPanels)
+            })
+         },[])
+ return panels
+}
+
+function ChartsPage() {
+
+    const objects = NewData()
+    console.log(objects)
     return (
         <div className="Charts__Page">
            
@@ -26,9 +30,9 @@ function ChartsPage() {
            
             {objects.map((object)=>(
                     <BarChart data={object.data}
-                    name={object.name}
+                    name={'kWh'}
                     title={object.title}
-                    allTime={object.allTime}
+                    allTime={object.alltime}
                     daily={object.daily}/>
                     ))}  
             </div>
