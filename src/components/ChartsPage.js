@@ -1,23 +1,8 @@
-import React, {useState, useEffect}from 'react'
+import React from 'react'
 import './ChartsPage.css'
 import BarChart from './BarChart.js'
-import db from '../Firebase.js'
 
-function NewData(){
-
-    const [panels, setPanels] = useState([]);
-    useEffect(()=>{
-        db.collection('panels')
-            .onSnapshot((snapshot) =>{
-                const newPanels = snapshot.docs.map((doc)=>({
-                    id: doc.id,
-                    ...doc.data()
-                }))
-                setPanels(newPanels)
-            })
-         },[])
- return panels
-}
+import NewData from './NewData.js'
 
 function ChartsPage() {
 
