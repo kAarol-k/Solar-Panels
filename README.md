@@ -1,4 +1,4 @@
 Solar Panels app with API 
 React
 Firebase DB
-Chart.j
+Chart.js
